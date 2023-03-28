@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model about_company {
+  id           Int     @id
+  description  String? @db.LongText
+  company_logo String? @db.VarChar(100)
+}
+
+model address {
+  id    Int     @id
+  name  String? @db.VarChar(45)
+  image String? @db.VarChar(200)
+}
+
+model projects {
+  id          Int    @id
+  name        String @db.VarChar(45)
+  image       String @db.VarChar(45)
+  description String @db.VarChar(45)
+}
+
+model services {
+  id          Int     @id
+  name        String? @db.VarChar(45)
+  image       String? @db.VarChar(45)
+  description String? @db.LongText
+}
+
+model teams {
+  id        Int     @id
+  name      String  @db.VarChar(45)
+  position  String? @db.VarChar(45)
+  image     String? @db.VarChar(200)
+  fb        String? @db.VarChar(45)
+  twitter   String? @db.VarChar(45)
+  instagram String? @db.VarChar(45)
+  youtube   String? @db.VarChar(45)
+  email     String? @db.VarChar(45)
+  phone     String? @db.VarChar(45)
+}
+
+model testimonials {
+  id        Int     @id
+  name      String? @db.VarChar(45)
+  image     String? @db.VarChar(45)
+  testimony String? @db.VarChar(45)
+  fb        String? @db.VarChar(45)
+  twitter   String? @db.VarChar(45)
+  instagram String? @db.VarChar(45)
+  youtube   String? @db.VarChar(45)
+  email     String? @db.VarChar(45)
+  phone     String? @db.VarChar(45)
+}
+
+model users {
+  id    Int     @id
+  name  String? @db.VarChar(45)
+  email String? @db.VarChar(45)
+}
