@@ -1,0 +1,15 @@
+const express = require("express");
+const app = express();
+
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("<h1>Dave Construction Backend</h1>");
+});
+
+app.use("/abrilo", (req, res) => {
+  res.send("<h1>Abrilo</h1>");
+});
+
+module.exports = app;
