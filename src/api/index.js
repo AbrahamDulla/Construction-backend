@@ -13,5 +13,5 @@ app.use("/abrilo", (req, res) => {
 });
 
 app.use("/user", require("./routes/user.routes"));
-
+app.use("/about", require("./routes/about.routes"));
 module.exports = app;

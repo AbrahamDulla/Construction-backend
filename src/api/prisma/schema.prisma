@@ -7,34 +7,34 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model about_company {
-  id           Int     @id
+model abouts {
+  id           String  @id @default(uuid())
   description  String? @db.LongText
   company_logo String? @db.VarChar(100)
 }
 
 model address {
-  id    Int     @id
+  id    String  @id @default(uuid())
   name  String? @db.VarChar(45)
   image String? @db.VarChar(200)
 }
 
 model projects {
-  id          Int    @id
+  id          String @id @default(uuid())
   name        String @db.VarChar(45)
   image       String @db.VarChar(45)
   description String @db.VarChar(45)
 }
 
 model services {
-  id          Int     @id
+  id          String  @id @default(uuid())
   name        String? @db.VarChar(45)
   image       String? @db.VarChar(45)
   description String? @db.LongText
 }
 
 model teams {
-  id        Int     @id
+  id        String  @id @default(uuid())
   name      String  @db.VarChar(45)
   position  String? @db.VarChar(45)
   image     String? @db.VarChar(200)
@@ -47,7 +47,7 @@ model teams {
 }
 
 model testimonials {
-  id        Int     @id
+  id        String  @id @default(uuid())
   name      String? @db.VarChar(45)
   image     String? @db.VarChar(45)
   testimony String? @db.VarChar(45)
@@ -60,7 +60,8 @@ model testimonials {
 }
 
 model users {
-  id    Int     @id
-  name  String? @db.VarChar(45)
-  email String? @db.VarChar(45)
+  id       String  @id @default(uuid())
+  name     String? @db.VarChar(45)
+  email    String? @db.VarChar(45)
+  password String? @db.VarChar(45)
 }
